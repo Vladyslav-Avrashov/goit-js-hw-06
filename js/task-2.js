@@ -10,6 +10,10 @@ class Storage {
     this.#items.push(newItem);
   }
   removeItem(itemToRemove) {
+    if (!this.#items.includes(itemToRemove)) {
+      console.log(`${itemToRemove} не знайдено`);
+      return;
+    }
     this.#items = this.#items.filter(item => item !== itemToRemove);
   }
 }
